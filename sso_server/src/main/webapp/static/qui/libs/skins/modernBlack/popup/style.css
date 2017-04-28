@@ -1,0 +1,407 @@
+/*弹出窗口*/
+.zDialogCon{
+	padding-top:5px;
+}
+.dialog_borderWidth{
+	width:13px;
+}
+.dialog_title{
+	padding: 10px 0 0 4px; 
+	float: left; 
+	font-weight: bold; 
+	color:#fff;
+}
+.dialog_lt{
+	background-image: url(dialog_lt.png) !important;
+	background: url(dialog_lt.gif) no-repeat 0 0;
+	height:34px;
+}
+.dialog_ct{
+	background-image:url(dialog_ct.png) !important;
+	background-image: url(dialog_ct.gif);
+	background-repeat:repeat-x;
+	height:34px;
+	vertical-align:top;
+}
+.dialog_rt{
+	background-image: url(dialog_rt.png) !important;
+	background: url(dialog_rt.gif) no-repeat right 0;
+	height:34px;
+}
+.dialog_closebtn{
+	background-image:url(dialog_closebtn.gif);
+	border:0;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-position:50% 50%;
+	
+	margin: 9px 0 0;
+	*margin-top: 10px; 
+	 position: relative;
+	 top:auto; 
+	 cursor: pointer; 
+	 float: right; 
+	 height: 17px; 
+	 width: 28px;
+}
+.dialog_closebtn_over{
+	background-image:url(dialog_closebtn_over.gif);
+	border:0;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-position:50% 50%;
+	
+	margin: 9px 0 0;
+	*margin-top: 10px;  
+	 position: relative;
+	 top:auto; 
+	 cursor: pointer; 
+	 float: right; 
+	 height: 17px; 
+	 width: 28px;
+}
+.dialog_maxbtn{
+	background-image:url(dialog_maxbtn.gif);
+	border:0;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-position:50% 50%;
+	
+	margin: 9px 0 0;
+	*margin-top: 10px; 
+	position: relative;
+	top:auto; 
+	cursor: pointer; 
+	float: right; 
+	height: 17px; 
+	width: 28px; 
+}
+.dialog_minbtn{
+	background-image:url(dialog_minbtn.gif);
+	border:0;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-position:50% 50%;
+	
+	margin: 9px 0 0;
+	*margin-top: 10px; 
+	position: relative;
+	top:auto; 
+	cursor: pointer; 
+	float: right; 
+	height: 17px; 
+	width: 28px; 
+}
+
+.dialog_decreasebtn{
+	background-image:url(dialog_decreasebtn.gif)!important;
+}
+
+.dialog_mlm{
+	background-image: url(dialog_mlm.png) !important;
+	background: url(dialog_mlm.gif) repeat-y left;
+}
+.dialog_bg{
+	background:#eaece9 url(dialog_bg.jpg) no-repeat scroll right top;
+}
+.dialog_messageIcon{
+	background-image:url(window.gif);
+	border:0;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-position:50% 50%;
+	width:32px;
+	height:32px;
+}
+.dialog_mrm{
+	background-image: url(dialog_mrm.png) !important;
+	background: url(dialog_mrm.gif) repeat-y right;
+}
+.dialog_lb{
+	background-image: url(dialog_lb.png) !important;
+	background: url(dialog_lb.gif) no-repeat 0 bottom;
+	height:10px;
+}
+.dialog_cb{
+	background-image: url(dialog_cb.png) !important;
+	background: url(dialog_cb.gif) repeat-x bottom;
+	height:10px;
+}
+.dialog_rb{
+	background-image: url(dialog_rb.png) !important;
+	background: url(dialog_rb.gif) no-repeat right bottom;
+	height:10px;
+}
+.icon_alert{
+	background-image:url(icon_alert.gif);
+	border:0;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-position:50% 50%;
+	width:34px;
+	height:34px;
+}
+.icon_query{
+	background-image:url(icon_query.gif);
+	border:0;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-position:50% 50%;
+	width:34px;
+	height:34px;
+}
+
+.dialog_sample_top{
+	border:solid 1px #999999;
+	background-color:#eeeeee;
+	height:32px;
+	font-weight:bold;
+	color:black;
+}
+.dialog__simple_closebtn{
+	background-image:url(simple_close.gif);
+	border:0;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-position:50% 50%;
+	width:10px;
+	height:10px;
+	margin: 10px 8px 0 0; 
+	position: relative; 
+	top: auto; 
+	cursor: pointer; 
+	float: right;
+}
+.dialog_sample_middle{
+	border-left:solid 1px #999999;
+	border-right:solid 1px #999999;
+	border-bottom:solid 1px #999999;
+	background-color:#ffffff;
+}
+.dialog_tip_middle{
+	border-left:solid 1px #999999;
+	border-right:solid 1px #999999;
+	background-color:#ffffff;
+}
+.dialog_tip_bottom{
+	height:31px;
+	background-image:url(simple_bottomLine.gif);
+	background-repeat:repeat-x;;
+}
+.dialog_tip_bottomArr{
+	height:100%;
+	background-image: url(simple_tip.png) !important;
+	background: url(simple_tip.gif) no-repeat center top;
+}
+.dialog_shadow_lt{
+	background-image:url(shadow_lt.gif);
+	background-repeat:no-repeat;
+	background-color:#ffffff;
+	height:39px;
+	width:220px;
+}
+.dialog_shadow_ct{
+	background-image:url(shadow_ct.gif);
+	background-repeat: repeat-x;
+	background-color:#ffffff;
+	height:39px;
+}
+.dialog_shadow_rt{
+	background-image:url(shadow_rt.gif);
+	background-repeat:no-repeat;
+	height:39px;
+	width:225px;
+}
+.dialog_shadow_lm{
+	background-image:url(shadow_lm.gif);
+	background-repeat: repeat-y;
+	background-color:#ffffff;
+}
+.dialog_shadow_cm{
+	background-color:#ffffff;
+}
+.dialog_shadow_rm{
+	background-image:url(shadow_rm.gif);
+	background-repeat: repeat-y;
+}
+.dialog_shadow_lb{
+	background-image: url(shadow_lb.png) !important;
+	background-image:url(shadow_lb.gif);
+	background-repeat:no-repeat;
+	height:130px;
+	width:220px;
+}
+.dialog_shadow_cb{
+	background-image: url(shadow_cb.png) !important;
+	background-image:url(shadow_cb.gif);
+	background-repeat: repeat-x;
+	background-position:0 100%;
+	height:130px;
+}
+.dialog_shadow_rb{
+	background-image: url(shadow_rb.png) !important;
+	background-image:url(shadow_rb.gif);
+	background-repeat:no-repeat;
+	height:130px;
+	width:225px;
+}
+.dialog_shadow_content{
+	position:absolute;
+	z-index:100;
+	padding:0 0 0 4px;
+}
+.dialog_shadow_content_top{
+	height:39px;
+	font-weight:bold;
+	color:black;
+}
+.dialog_trans_icon{
+	background-image:url(trans.gif);
+	border:0;
+	background-repeat:no-repeat;
+	background-color:transparent;
+	background-position:50% 50%;
+	width:1px;
+	height:1px;
+	float:left;
+}
+.dialog_icon_default{
+	 background-image: url(icon_dialog.png);
+	 _background-image: url(icon_dialog.gif);
+    background-repeat: no-repeat;
+    background-position: 0 50%;
+    padding-left:15px;
+    display:inline-block;
+    word-break: keep-all;
+    word-wrap: normal;
+}
+.task_bg{
+	position:absolute;
+	bottom:55px;
+	height:38px;
+	width:100%;
+}
+.task_bg_left{
+	width:46px;
+	height:38px;
+	background-image: url(taskbg_left.png);
+	background-repeat:no-repeat;
+}
+.task_bg_right{
+	width:46px;
+	height:38px;
+	background-image: url(taskbg_right.png);
+	background-repeat:no-repeat;
+}
+.task_bg_center{
+	width:100%;
+	height:38px;
+	background-image: url(taskbg_center.png);
+	background-repeat:repeat-x;
+}
+.task_bg_left_trans{
+	width:46px;
+	height:38px;
+}
+.task_bg_right_trans{
+	width:46px;
+	height:38px;
+}
+
+
+.dialogTaskBg{
+	height:27px;
+	width:100%;
+	position:absolute;
+	bottom:0;
+	background-image:url(taskBar.jpg);
+	background-repeat: repeat-x;
+	padding:2px 5px 0 0;
+}
+.taskItemContainer {
+    height: 24px;
+    left: 18px;
+    position: absolute;
+    top: 12px;
+    width: 9999px;
+	z-index:5;
+}
+.taskItemContainerParent{
+	width:100%;
+	height:40px;
+	overflow:hidden;
+	position:relative;
+}
+.taskItemButtonLeft{
+	position:absolute;
+	top:7px;
+	left:7px;
+	width:39px;
+	height:31px;
+	background-image: url(item_leftBtn.png);
+	background-repeat: no-repeat;
+	cursor:pointer;
+	cursor:hand;
+	z-index:10;
+}
+.taskItemButtonRight{
+	position:absolute;
+	right:7px;
+	top:7px;
+	width:39px;
+	height:31px;
+	background-image: url(item_rightBtn.png);
+	background-repeat: no-repeat;
+	cursor:pointer;
+	cursor:hand;
+	z-index:10;
+}
+
+.dialogTaskItem{
+	display:inline-block;
+	height:24px;
+	width:100px;
+	background-image:url(taskItemRight.jpg);
+	background-repeat:no-repeat;
+	background-position:100% 0%;
+	margin:0 0 0 2px;
+	padding:0 5px 0 0;
+	text-decoration:none;
+}
+.dialogTaskItem .dialogTaskItemRight{
+	display:block;
+	background-image:url(taskItemLeft.jpg);
+	background-repeat:no-repeat;
+	height:24px;
+	line-height:24px;
+	color:#0f5464;
+	padding:0 0px 0 5px;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+	text-decoration:none;
+}
+.dialogTaskItem:hover{
+	text-decoration:none;
+}
+.dialogTaskItemCurrent{
+	background-image:url(taskItemRightCurrent.jpg)!important;
+}
+.dialogTaskItemCurrent .dialogTaskItemRight{
+	background-image:url(taskItemLeftCurrent.jpg)!important;
+	color:#000000!important;
+}
+.dialogTaskItemIcon{
+	overflow:hidden;
+	width:100%;
+	text-overflow:ellipsis;
+}
+.dialogMinEffect{
+	border:dotted 1px #000000;
+	filter:alpha(opacity=40);
+	opacity:0.4;
+	background-color:#000000;
+	position:absolute;
+	z-index:9999;
+}
+/*弹出窗口*/

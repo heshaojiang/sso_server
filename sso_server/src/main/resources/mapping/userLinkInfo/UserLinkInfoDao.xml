@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.minstone.sso.userLinkInfo.dao.UserLinkInfoDao">
+
+	<resultMap id="BaseResultMap" type="com.minstone.sso.userLinkInfo.model.UserLinkInfo">
+       <id column="ID" property="id" jdbcType="VARCHAR" />
+       <result column="SYS_ID" property="sysId" jdbcType="VARCHAR" />
+       <result column="PARENT_ID" property="parentId" jdbcType="VARCHAR" />
+       <result column="USERNAME" property="username" jdbcType="VARCHAR" />
+       <result column="PASSWORD" property="password" jdbcType="VARCHAR" />
+       <result column="CRT_TIME" property="crtTime" jdbcType="VARCHAR" />
+	</resultMap>
+	
+	<!-- 用于select查询公用抽取的列 -->
+	<sql id="Base_Column_List">
+	    <![CDATA[
+			t.ID ,
+			t.SYS_ID ,
+			t.PARENT_ID ,
+			t.USERNAME ,
+			t.PASSWORD ,
+			t.CRT_TIME 
+	    ]]>
+	</sql>
+	
+	<sql id="Insert_List">
+	    <![CDATA[
+			t.ID ,
+			t.SYS_ID ,
+			t.PARENT_ID ,
+			t.USERNAME ,
+			t.PASSWORD ,
+			t.CRT_TIME 
+	    ]]>
+	</sql>
+	
+	<!-- query begin -->
+	
+	<select id="getById" parameterType="java.lang.String" resultType="com.minstone.sso.userLinkInfo.model.UserLinkInfo">
+		select
+		<include refid="Base_Column_List" />
+		from SYS_USER_LINK_INFO t
+		where t.id = #{ id, jdbcType=VARCHAR }
+	</select>
+	
+	<select id="get" parameterType="com.minstone.sso.userLinkInfo.model.UserLinkInfo" resultType="com.minstone.sso.userLinkInfo.model.UserLinkInfo">
+		select
+		<include refid="Base_Column_List" />
+		from SYS_USER_LINK_INFO t
+		<where>
+			<if test="id != null">
+				and ID = #{ id, jdbcType=VARCHAR }
+			</if>
+			<if test="sysId != null">
+				and SYS_ID = #{ sysId, jdbcType=VARCHAR }
+			</if>
+			<if test="parentId != null">
+				and PARENT_ID = #{ parentId, jdbcType=VARCHAR }
+			</if>
+			<if test="username != null">
+				and USERNAME = #{ username, jdbcType=VARCHAR }
+			</if>
+			<if test="password != null">
+				and PASSWORD = #{ password, jdbcType=VARCHAR }
+			</if>
+			<if test="crtTime != null">
+				and CRT_TIME = #{ crtTime, jdbcType=VARCHAR }
+			</if>
+		</where>
+	</select>
+	
+	<select id="findList" parameterType="com.minstone.sso.userLinkInfo.model.UserLinkInfo" resultType="com.minstone.sso.userLinkInfo.model.UserLinkInfo">
+		select
+		<include refid="Base_Column_List" />
+		from SYS_USER_LINK_INFO t
+		<where>
+			<if test="id != null">
+				and ID = #{ id, jdbcType=VARCHAR }
+			</if>
+			<if test="sysId != null">
+				and SYS_ID = #{ sysId, jdbcType=VARCHAR }
+			</if>
+			<if test="parentId != null">
+				and PARENT_ID = #{ parentId, jdbcType=VARCHAR }
+			</if>
+			<if test="username != null">
+				and USERNAME = #{ username, jdbcType=VARCHAR }
+			</if>
+			<if test="password != null">
+				and PASSWORD = #{ password, jdbcType=VARCHAR }
+			</if>
+			<if test="crtTime != null">
+				and CRT_TIME = #{ crtTime, jdbcType=VARCHAR }
+			</if>
+		</where>
+	</select>
+	
+	<!-- <select id="findAllList" parameterType="com.minstone.sso.userLinkInfo.model.UserLinkInfo" resultType="UserLinkInfo">
+		select
+		<include refid="Base_Column_List" />
+		from SYS_USER_LINK_INFO t
+		<where>
+			<if test="id != null">
+				and ID = #{ id, jdbcType=VARCHAR }
+			</if>
+			<if test="sysId != null">
+				and SYS_ID = #{ sysId, jdbcType=VARCHAR }
+			</if>
+			<if test="parentId != null">
+				and PARENT_ID = #{ parentId, jdbcType=VARCHAR }
+			</if>
+			<if test="username != null">
+				and USERNAME = #{ username, jdbcType=VARCHAR }
+			</if>
+			<if test="password != null">
+				and PASSWORD = #{ password, jdbcType=VARCHAR }
+			</if>
+			<if test="crtTime != null">
+				and CRT_TIME = #{ crtTime, jdbcType=VARCHAR }
+			</if>
+		</where>
+	</select> -->
+	
+	<select id="findAllList" resultType="com.minstone.sso.userLinkInfo.model.UserLinkInfo">
+		select
+		<include refid="Base_Column_List" />
+		from SYS_USER_LINK_INFO t
+	</select>
+	
+	<select id="getSysWithUser" parameterType="java.util.Map" resultType="java.util.Map">
+		select u.*,s.*,s.id as s_info_id from sys_info s left join sys_user_link_info u on u.sys_id=s.id
+		<if test="parentId != null">
+			and u.PARENT_ID = #{ parentId, jdbcType=VARCHAR }
+		</if>
+		<if test="username != null">
+			and u.USERNAME = #{ username, jdbcType=VARCHAR }
+		</if>
+		<where>
+			<if test="sysId != null">
+				and u.SYS_ID = #{ sysId, jdbcType=VARCHAR }
+			</if>
+			
+			<if test="sysCode != null">
+				and s.sys_code = #{ sysCode, jdbcType=VARCHAR }
+			</if>
+			<if test="sysCodes != null">
+				and s.sys_code in
+				<foreach item="sysCodes" collection="sysCodes" open="(" separator="," close=")">
+			    	#{sysCodes, jdbcType=VARCHAR}
+			    </foreach>
+			</if>
+			
+		</where>
+	</select>
+	
+	<insert id="insert" parameterType="com.minstone.sso.userLinkInfo.model.UserLinkInfo">
+		insert into SYS_USER_LINK_INFO t (
+			<include refid="Insert_List" />
+		)
+		values (
+			#{ id, jdbcType=VARCHAR },
+			#{ sysId, jdbcType=VARCHAR },
+			#{ parentId, jdbcType=VARCHAR },
+			#{ username, jdbcType=VARCHAR },
+			#{ password, jdbcType=VARCHAR },
+			#{ crtTime, jdbcType=VARCHAR }
+		)
+	</insert>
+	
+	<update id="update" parameterType="com.minstone.sso.userLinkInfo.model.UserLinkInfo">
+		update SYS_USER_LINK_INFO t
+		<set>
+			<if test="sysId != null">
+				SYS_ID = #{ sysId, jdbcType=VARCHAR } ,
+			</if>
+			<if test="parentId != null">
+				PARENT_ID = #{ parentId, jdbcType=VARCHAR } ,
+			</if>
+			<if test="username != null">
+				USERNAME = #{ username, jdbcType=VARCHAR } ,
+			</if>
+			<if test="password != null">
+				PASSWORD = #{ password, jdbcType=VARCHAR } ,
+			</if>
+			<if test="crtTime != null">
+				CRT_TIME = #{ crtTime, jdbcType=VARCHAR } ,
+			</if>
+		</set>
+		WHERE id = #{ id, jdbcType=VARCHAR }
+	</update>
+
+	<update id="delete" parameterType="java.util.Map">
+		delete from SYS_USER_LINK_INFO 
+		<where>
+			<if test="id != null">
+				and ID = #{ id, jdbcType=VARCHAR }
+			</if>
+			<if test="sysId != null">
+				and SYS_ID = #{ sysId, jdbcType=VARCHAR }
+			</if>
+			<if test="parentId != null">
+				and PARENT_ID = #{ parentId, jdbcType=VARCHAR }
+			</if>
+		</where>
+	</update>
+
+	<!-- query end -->
+
+	<!-- end -->
+
+</mapper>
