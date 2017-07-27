@@ -1,0 +1,3 @@
+# Windows:
+*.class
+/sso_server/target/*
